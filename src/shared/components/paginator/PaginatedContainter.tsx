@@ -34,10 +34,20 @@ export const PaginatedContainer = (props: PaginatedContainterProps) => {
     containerRef.current?.children[page].setAttribute("data-shadow", "true");
   }, [page]);
 
+  // Transform vertical scroll to horisontal
+  const onWheel = (event: React.WheelEvent<HTMLDivElement>) => {
+    // If scroll is vertical return
+    if (!event.deltaY) return;
+
+    event.currentTarget.scrollLeft += event.deltaY + event.deltaX;
+    event.preventDefault();
+  };
+
   return (
     <div
       className="flex gap-4 overflow-auto disable-scrollbar lg:px-0.5 lg:py-1"
       ref={containerRef}
+      onWheel={onWheel}
     >
       {children}
     </div>
