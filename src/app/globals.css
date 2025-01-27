@@ -3,19 +3,44 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FAFAFA;
+  --widget: #F0F0F0;
+
+  --white: #F3F3F3;
+
+  --black-18: #121212;
+  --black-21: #151515;
+  --black-23: #171717;
+
+  --grey-28: #1C1C1C;
+  --grey-204: #CCCCCC;
+  --grey-225: #E1E1E1;
+  --middle-grey: #D1D1D1;
+
+  /* Main Colors */
+  --violet-saturated: #A59DFF;
+  --violet-dark-hover: #8977F3;
+
+  /* Typography */
+  --font-size-h2: 26px;
+  --font-size-l: 24px;
+  --font-size-body: 14px;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (min-width: 1024px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --font-size-h2: 40px;
+    --font-size-l: 32px;
+    --font-size-body: 16px;  
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.disable-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.disable-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
